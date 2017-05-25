@@ -26,7 +26,7 @@ Sometimes when we're looping, we want to exit a loop after encountering a certai
 ``` javascript
 const array = ["dog", 1, "cat"]
 
-for (let i = 0, l = array.length; i < l; i++) {
+for (let i = 0; i < array.length; i++) {
   if (typeof array[i] !== 'string') {
     break
   }
@@ -42,7 +42,7 @@ const mostlyOne = [1, 1, 1, 1, 2, 1, 1, 3]
 
 let notOne = null
 
-for (let i = 0, l = mostlyOne.length; i < l; i++) {
+for (let i = 0; i < mostlyOne.length; i++) {
   if (mostlyOne[i] !== 1) {
     notOne = mostlyOne[i]
     break
@@ -60,7 +60,7 @@ In many instances, we can rewrite that final `break` example by encapsulating it
 
 ``` javascript
 function firstNotOne(array) {
-  for (let i = 0, l = array.length; i < l; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (array[i] !== 1) {
       return array[i]
     }
@@ -74,7 +74,7 @@ If we evaluate the above in console, we'll see that `notOne` is still equal to `
 
 ``` javascript
 function firstNotEqual(array, value) {
-  for (let i = 0, l = array.length; i < l; i++) {
+  for (let i = 0; i < array.length; i++) {
     debugger
     if (array[i] !== value) {
       return array[i]
@@ -94,7 +94,7 @@ This is already an improvement over `firstNotOne`, but it's still tied down to a
 
 ``` javascript
 function find(array, criteriaFunc) {
-  for (let i = 0, l = array.length; i < l; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (criteriaFunc(array[i])) {
       return array[i]
     }
@@ -123,7 +123,7 @@ This is where we use `continue`!
 const scores = [3, 4, 10, 5, 11, 6]
 
 // increment all scores < 10
-for (let i = 0, l = scores.length; i < l; i++) {
+for (let i = 0; i < scores.length; i++) {
   if (scores[i] >= 10) {
     continue
   }
